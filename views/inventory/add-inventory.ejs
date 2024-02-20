@@ -1,0 +1,30 @@
+<% if (title) { %>
+<h1><%= title %></h1>
+<% } else {
+    res.redirect('/')
+} %>
+
+<% if (errors) { %>
+<ul class="notice">
+<% errors.array().forEach(error => { %>
+    <li><%= error.msg %></li>
+<%  }) %>
+</ul>
+<% } %>
+
+<form id="addVehicleForm" action="/inv/add-vehicle" method="post">
+    <fieldset>
+        <label class="add">Add New Vehicle*</label>
+        <%- drop %>
+        <label class="add">Make* <input type="text" id="make" name="inv_make" required></label>
+        <label class="add">Model* <input type="text" id="model" name="inv_model" required></label>
+        <label class="add">Description* <textarea id="description" name="inv_description" rows="5" cols="12" required></textarea></label>
+        <label class="add">Image* <input type="text" id="image" name="inv_image" value="/images/vehicles/no-image.png" required></label>
+        <label class="add">Thumbnail* <input type="text" id="thumbnail" name="inv_thumbnail" value="/images/vehicles/no-image-tn.png" required></label>
+        <label class="add">Price* <input type="number" id="price" name="inv_price" required></label>
+        <label class="add">Year* <input type="number" id="year" name="inv_year" required></label>
+        <label class="add">Miles* <input type="number" id="miles" name="inv_miles" required></label>
+        <label class="add">Color* <input type="text" id="color" name="inv_color" required></label>
+        <input type="submit" value="Add Vehicle" class="addButton">
+    </fieldset>
+</form>

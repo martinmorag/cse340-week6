@@ -1,0 +1,18 @@
+<% if (title) { %>
+<h1><%= title %></h1>
+<% } else {
+    res.redirect('/')
+} %>
+
+<div id="add">
+    <a href="/inv/add-classification" class="add_new">Add New Clasification</a>
+    <a href="/inv/add-vehicle" class="add_new">Add New Vehicle</a>
+</div>
+
+<h2 class="manage_title">Manage Inventory</h2>
+
+<%- classificationSelect %>
+<table id="inventoryDisplay"></table>
+<noscript>JavaScript must be enabled to use this page.</noscript>
+
+<script src="../../js/inventory.js"></script>

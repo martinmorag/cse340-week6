@@ -1,0 +1,11 @@
+<% if (title) { %>
+<h1><%= title %></h1>
+<% } else {
+    res.redirect('/')
+} %>
+
+<form action="/post-comment" method="post" id="post_comment">
+    <h3>Post a comment!</h3>
+    <textarea name="content" placeholder="Write your comment here" cols="25" rows="5"></textarea>
+    <button type="submit">Post Comment</button>
+</form>
