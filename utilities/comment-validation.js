@@ -34,7 +34,7 @@ validate.checkPostData = async (req, res, next) => {
 // Validation for posting a comment
 validate.deleteCommentRules = () => {
     return [
-        body("conmentId")
+        body("commentId")
             .trim()
             .isLength({ min: 1 })
             .withMessage("Must have a Comment N."),
