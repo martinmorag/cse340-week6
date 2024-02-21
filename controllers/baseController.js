@@ -18,7 +18,7 @@ baseController.buildComment = async function(req, res) {
 
 baseController.buildPostComment = async function(req, res, next) {
   const nav = await utilities.getNav();
-  res.render("comment/post-comment", {title: "Post Comment", nav})
+  res.render("comment/post-comment", {title: "Post Comment", nav, errors: null})
 }
 
 baseController.postComment = async function(req, res) {
@@ -41,7 +41,7 @@ baseController.postComment = async function(req, res) {
 
 baseController.buildDeleteComment = async function(req, res, next) {
   const nav = await utilities.getNav();
-  res.render("comment/delete-comment", {title: "Delete Comment", nav})
+  res.render("comment/delete-comment", {title: "Delete Comment", nav, errors: null})
 }
 
 baseController.deleteComment = async function(req, res, next) {
