@@ -51,7 +51,7 @@ validate.checkDeleteData = async (req, res, next) => {
         let nav = await utilities.getNav()
       res.render("comment/delete-comment", {
         errors,
-        title: "Delete comment",
+        title: "Delete Comment",
         nav,
       })
       return
