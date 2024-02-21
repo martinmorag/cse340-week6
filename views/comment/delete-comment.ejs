@@ -3,6 +3,14 @@
 <% } else {
     res.redirect('/')
 } %>
+
+<% if (errors) { %>
+    <ul class="notice">
+    <% errors.array().forEach(error => { %>
+        <li><%= error.msg %></li>
+    <%  }) %>
+    </ul>
+    <% } %>
     
 <form id="delete_comment_form" action="/delete-comment" method="post">
     <h3>Delete a comment</h3>
