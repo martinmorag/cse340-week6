@@ -17,7 +17,7 @@ validate.postCommentRules = () => {
  * Check data and return errors or continue
  * ***************************** */
 validate.checkPostData = async (req, res, next) => {
-    const { classification_name } = req.body;
+    const { content } = req.body;
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         let nav = await utilities.getNav()
@@ -45,7 +45,7 @@ validate.deleteCommentRules = () => {
  * Check data and return errors or continue
  * ***************************** */
 validate.checkDeleteData = async (req, res, next) => {
-    const { classification_name } = req.body;
+    const { commentId } = req.body;
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         let nav = await utilities.getNav()
